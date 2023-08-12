@@ -900,6 +900,10 @@ video {
   background-color: transparent;
 }
 
+.bg-black\/80 {
+  background-color: rgb(0 0 0 / 0.8);
+}
+
 .bg-\[url\(\.\/images\/mobile\/image-hero\.jpg\)\] {
   background-image: url(./images/mobile/image-hero.jpg);
 }
@@ -1251,6 +1255,10 @@ video {
 .hover\:text-gray-500:hover {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline;
 }
 
 .group:hover .group-hover\:text-black {
