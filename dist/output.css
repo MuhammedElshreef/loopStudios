@@ -707,10 +707,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\.\/loopstudios-landing-page-main\/images\/mobile\/image-hero\.jpg\)\] {
-  background-image: url(./loopstudios-landing-page-main/images/mobile/image-hero.jpg);
-}
-
 .bg-\[url\(\.\/images\/mobile\/image-hero\.jpg\)\] {
   background-image: url(./images/mobile/image-hero.jpg);
 }
@@ -721,11 +717,6 @@ video {
 
 .bg-no-repeat {
   background-repeat: no-repeat;
-}
-
-.object-contain {
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 
 .object-cover {
@@ -784,10 +775,6 @@ video {
 .py-36 {
   padding-top: 9rem;
   padding-bottom: 9rem;
-}
-
-.pb-10 {
-  padding-bottom: 2.5rem;
 }
 
 .pb-20 {
@@ -899,10 +886,6 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.group:hover .group-hover\:bg-black\/50 {
-  background-color: rgb(0 0 0 / 0.5);
-}
-
 .group:hover .group-hover\:text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -940,20 +923,12 @@ video {
     height: 2.5rem;
   }
 
-  .lg\:h-96 {
-    height: 24rem;
-  }
-
   .lg\:h-auto {
     height: auto;
   }
 
   .lg\:h-full {
     height: 100%;
-  }
-
-  .lg\:h-\[300px\] {
-    height: 300px;
   }
 
   .lg\:min-h-screen {
@@ -996,8 +971,8 @@ video {
     justify-content: space-between;
   }
 
-  .lg\:gap-48 {
-    gap: 12rem;
+  .lg\:gap-32 {
+    gap: 8rem;
   }
 
   .lg\:gap-8 {
@@ -1008,16 +983,12 @@ video {
     gap: 2.25rem;
   }
 
+  .lg\:gap-0 {
+    gap: 0px;
+  }
+
   .lg\:self-start {
     align-self: flex-start;
-  }
-
-  .lg\:bg-\[url\(\.\/loopstudios-landing-page-main\/images\/desktop\/image-hero\.jpg\)\] {
-    background-image: url(./loopstudios-landing-page-main/images/desktop/image-hero.jpg);
-  }
-
-  .lg\:bg-\[url\(\.\/loopstudios-landing-page-main\/images\/desktop\/image-interactive\.jpg\)\] {
-    background-image: url(./loopstudios-landing-page-main/images/desktop/image-interactive.jpg);
   }
 
   .lg\:bg-\[url\(\.\/images\/desktop\/image-hero\.jpg\)\] {
