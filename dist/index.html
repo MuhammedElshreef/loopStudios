@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="all.min.css" />
+    <link rel="stylesheet" href="output.css" />
+    <title>Frontend Mentor | Loopstudios landing page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="lg:bg-[url(./images/desktop/image-hero.jpg)] bg-[url(./images/mobile/image-hero.jpg)] bg-no-repeat bg-cover lg:min-h-screen w-auto h-auto flex flex-col lg:gap-48"
+    >
+      <div class="container pt-10 lg:pt-12 flex justify-between">
+        <img src="./images/logo.svg" class="lg:w-auto w-1/2" />
+        <div class="lg:flex lg:flex-row lg:gap-9 hidden">
+          <button class="text-white text-base">About</button>
+          <button class="text-white text-base">Careers</button>
+          <button class="text-white text-base">Events</button>
+          <button class="text-white text-base">Products</button>
+          <button class="text-white text-base">Support</button>
+        </div>
+      </div>
+      <div class="px-6 lg:px-44 font-josefin py-36">
+        <div
+          class="border-white border-solid border-[2px] w-auto lg:w-[800px] lg:p-9 p-9"
+        >
+          <p class="text-white text-4xl lg:text-8xl font-light uppercase">
+            Immersive experiences that deliver
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="lg:px-44 lg:pt-44 px-6 pt-32">
+      <div
+        class="lg:bg-[url(./images/desktop/image-interactive.jpg)] bg-no-repeat lg:pt-40 lg:pl-[570px] px-6 flex flex-col items-center"
+      >
+        <img
+          src="./images/mobile/image-interactive.jpg "
+          class="lg:hidden"
+          alt=""
+        />
+        <div class="bg-white lg:py-20 px-10 pt-14 w-500px">
+          <p
+            class="lg:text-5xl text-2xl font-[300] font-josefin uppercase text-center lg:text-start"
+          >
+            The leader in interactive VR
+          </p>
+          <p
+            class="font-alata text-base font-normal text-[#8C8C8C] py-3 text-center lg:text-left"
+          >
+            Founded in 2011, Loopstudios has been producing world-class virtual
+            reality projects for some of the best companies around the globe.
+            Our award-winning creations have transformed businesses through
+            digital experiences that bind to their brand.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="lg:flex lg:justify-between lg:px-44 pt-20 px-6">
+        <p class="font-josefin lg:text-6xl uppercase text-center text-4xl">
+          Our creations
+        </p>
+        <button
+          class="hover:bg-black border-black hover:text-white border-solid border-[2px] lg:h-10 lg:w-48 py-1 uppercase font-alata text-lg tracking-[0.3em] lg:block hidden"
+        >
+          See all
+        </button>
+      </div>
+      <div
+        class="lg:px-44 lg:pt-44 pt-14 grid lg:grid-cols-4 gap-8 lg:pb-48 justify-center px-6"
+        style="row-gap: 44px"
+      >
+        <!-- <div class="relative lg:h-full h-32 group">
+          <img
+            class="group-hover:opacity-30 w-full h-full object-cover object-center"
+            src="./images/desktop/image-deep-earth.jpg"
+            alt=""
+          />
+          <img
+          class="group-hover:opacity-30 lg:hidden block"
+          src="./images/mobile/image-deep-earth.jpg"
+          alt=""
+        /> 
+          <div class="absolute bottom-6 px-4 left-0 w-full">
+            <p
+              class="inline p-1 bg-black/50 uppercase group-hover:text-black text-white font-josefin text-2xl/normal"
+            >
+              Deep earth
+            </p>
+          </div>
+        </div> -->
+        <div class="relative group">
+          <img
+            class="group-hover:opacity-30 lg:block hidden"
+            src="./images/desktop/image-deep-earth.jpg"
+            alt=""
+          />
+          <img
+            class="group-hover:opacity-30 lg:hidden block"
+            src="./images/mobile/image-deep-earth.jpg"
+            alt=""
+          />
+          <p
+            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2xl md:text-2xl text-2xl bottom-[6%] lg:w-1/2 lg:h-auto w-1/3"
+          >
+            Deep earth
+          </p>
+        </div>
+        <div class="relative group">
+          <img
+            class="group-hover:opacity-30 lg:block hidden"
+            src="./images/desktop/image-night-arcade.jpg"
+            alt=""
+          />
+          <img
+            class="group-hover:opacity-30 lg:hidden block"
+            src="./images/mobile/image-night-arcade.jpg"
+            alt=""
+          />
+          <p
+            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2xl md:text-2xl text-2xl bottom-[6%] lg:w-1/2 lg:h-auto w-1/3"
+          >
+            Night arcade
+          </p>
+        </div>
+        <div class="relative group">
+          <img
+            class="group-hover:opacity-30 lg:block hidden"
+            src="./images/desktop/image-soccer-team.jpg"
+            alt=""
+          />
+          <img
+            class="group-hover:opacity-30 lg:hidden block"
+            src="./images/mobile/image-soccer-team.jpg"
+            alt=""
+          />
+          <p
+            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2xl md:text-2xl text-2xl bottom-[6%] lg:w-1/2 lg:h-auto w-1/3"
+          >
+            Soccer team VR
+          </p>
+        </div>
+        <div class="relative group">
+          <img
+            class="group-hover:opacity-30 lg:block hidden"
+            src="./images/desktop/image-grid.jpg"
+            alt=""
+          />
+          <img
+            class="group-hover:opacity-30 lg:hidden block"
+            src="./images/mobile/image-grid.jpg"
+            alt=""
+          />
+          <p
+            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2xl md:text-2xl text-2xl bottom-[6%] lg:w-1/2 lg:h-auto w-1/3"
+          >
+            The <br />grid
+          </p>
+        </div>
+        <div class="relative group">
+          <img
+            class="group-hover:opacity-30 lg:block hidden"
+            src="./images/desktop/image-from-above.jpg"
+            alt=""
+          />
+          <img
+            class="group-hover:opacity-30 lg:hidden block"
+            src="./images/mobile/image-from-above.jpg"
+            alt=""
+          />
+          <p
+            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2xl md:text-2xl text-2xl bottom-[6%] w-1/2 lg:h-auto"
+          >
+            From up above VR
+          </p>
+        </div>
+        <div class="relative group">
+          <img
+            class="group-hover:opacity-30 lg:block hidden"
+            src="./images/desktop/image-pocket-borealis.jpg"
+            alt=""
+          />
+          <img
+            class="group-hover:opacity-30 lg:hidden block"
+            src="./images/mobile/image-pocket-borealis.jpg"
+            alt=""
+          />
+          <p
+            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2xl md:text-2xl text-2xl bottom-[6%] lg:w-1/2 lg:h-auto w-1/3"
+          >
+            Pocket borealis
+          </p>
+        </div>
+        <div class="relative group">
+          <img
+            class="group-hover:opacity-30 lg:block hidden"
+            src="./images/desktop/image-curiosity.jpg"
+            alt=""
+          />
+          <img
+            class="group-hover:opacity-30 lg:hidden block"
+            src="./images/mobile/image-curiosity.jpg"
+            alt=""
+          />
+          <p
+            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2 xl md:text-2xl text-2xl bottom-[6%] lg:w-1/2 lg:h-auto w-1/3"
+          >
+            The curiosity
+          </p>
+        </div>
+        <div class="relative group">
+          <img
+            class="group-hover:opacity-30 lg:block hidden"
+            src="./images/desktop/image-fisheye.jpg"
+            alt=""
+          />
+          <img
+            class="group-hover:opacity-30 lg:hidden block"
+            src="./images/mobile/image-fisheye.jpg"
+            alt=""
+          />
+          <p
+            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2xl md:text-2xl text-2xl bottom-[6%] lg:w-1/2 lg:h-auto w-1/3"
+          >
+            Make it fisheye
+          </p>
+        </div>
+      </div>
+      <div class="lg:hidden pt-10 pb-20 flex justify-center">
+        <button
+          class="hover:bg-black border-black hover:text-white border-solid tracking-[0.25em] border-[2px] py-3 px-9 uppercase font-alata text-lg"
+        >
+          SEE ALL
+        </button>
+      </div>
+    </div>
+    <div
+      class="bg-black lg:px-44 py-14 flex lg:flex-row flex-col lg:justify-between px-6"
+    >
+      <div class="flex flex-col justify-center items-center">
+        <img
+          class="lg:w-1/3 w-1/3 lg:self-start"
+          src="./images/logo.svg"
+          alt=""
+        />
+        <div class="flex lg:flex-row flex-col pt-6 lg:gap-8 gap-4">
+          <button class="text-white">About</button>
+          <button class="text-white">Careers</button>
+          <button class="text-white">Events</button>
+          <button class="text-white">Products</button>
+          <button class="text-white">Support</button>
+        </div>
+      </div>
+      <div class="flex flex-col gap-0">
+        <div
+          class="flex lg:justify-end justify-center gap-6 lg:py-[23px] pt-12"
+        >
+          <a class="fa-brands fa-facebook fa-xl text-white h-fit"> </a>
+          <a class="fa-brands fa-twitter fa-xl text-white h-fit"> </a>
+          <a class="fa-brands fa-pinterest fa-xl text-white h-fit"> </a>
+          <a class="fa-brands fa-instagram fa-xl text-white h-fit"></a>
+        </div>
+        <p class="text-[#8C8C8C] pt-6 text-center">
+          © 2021 Loopstudios. All rights reserved.
+        </p>
+      </div>
+    </div>
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+  </body>
+</html>
