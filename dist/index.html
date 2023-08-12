@@ -36,24 +36,35 @@
     <div
       class="lg:bg-[url(./images/desktop/image-hero.jpg)] bg-[url(./images/mobile/image-hero.jpg)] bg-no-repeat bg-cover lg:min-h-screen w-auto h-auto flex flex-col"
     >
-      <div class="container pt-10 lg:pt-12 flex justify-between">
-        <img src="./images/logo.svg" class="lg:w-auto w-1/2" />
-        <div class="">
-          <i class="fa-solid fa-bars text-white"></i>
-          <!-- <ul
-            class="lg:flex items-center z-[-1] lg:z-auto lg:static absolute bg-black w-full left-0"
-          >
-            <li class="mx-4 lg:my-0 my-6"><a href="#"></a>About</li>
-            <li class="mx-4 lg:my-0 my-6"><a href="#"></a>Careers</li>
-            <li class="mx-4 lg:my-0 my-6"><a href="#"></a>Events</li>
-            <li class="mx-4 lg:my-0 my-6"><a href="#"></a>Products</li>
-            <li class="mx-4 lg:my-0 my-6"><a href="#"></a>Support</li>
-          </ul> -->
-          <!-- <button class="text-white text-base">About</button>
+      <div class="px-6 lg:px-44 pt-10 lg:pt-12 flex justify-between">
+        <img src="./images/logo.svg" class="lg:w-auto w-1/2 object-contain" />
+        <nav
+        class="relative px-4 py-4 flex justify-between items-center bg-transparent"
+      >
+        <div class="lg:hidden">
+          <button class="navbar-burger flex items-center text-white ">
+            <svg
+              class="block h-4 w-4 fill-current"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Mobile menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+            </svg>
+          </button>
+        </div>
+        <ul
+          class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6"
+        >
+          
+        
+      </nav>
+        <div class="lg:flex lg:flex-row lg:gap-9 hidden">
+          <button class="text-white text-base">About</button>
           <button class="text-white text-base">Careers</button>
           <button class="text-white text-base">Events</button>
           <button class="text-white text-base">Products</button>
-          <button class="text-white text-base">Support</button> -->
+          <button class="text-white text-base">Support</button>
         </div>
       </div>
       <div class="px-6 lg:px-44 font-josefin py-36">
@@ -65,7 +76,75 @@
           </p>
         </div>
       </div>
+
+      <div class="navbar-menu relative z-50 hidden">
+        <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+        <nav
+          class="fixed top-0 left-0 bottom-0 flex flex-col w-full max-w-sm pt-12 px-6 bg-black border-r overflow-y-auto"
+        >
+          <div class="flex items-center justify-between mb-8 pb-16">
+            <img src="./images/logo.svg" class="lg:w-auto w-1/2 object-contain" />
+            <button class="navbar-close pr-3">
+              <svg
+                class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div>
+            <ul class="font-josefin gap-16">
+              <li class="mb-1">
+                <a
+                class="uppercase block pb-6 text-xl  text-white "
+                href="#"
+                  >About</a
+                >
+              </li>
+              <li class="mb-1">
+                <a
+                  class="uppercase block pb-6 text--xl text-white "
+                  href="#"
+                  >Careers</a
+                >
+              </li>
+              <li class="mb-1">
+                <a
+                  class="uppercase block pb-6 text-xl  text-white "
+                  href="#"
+                  >Events</a
+                >
+              </li>
+              <li class="mb-1">
+                <a
+                  class="uppercase block pb-6 text-xl  text-white "
+                  href="#"
+                  >Products</a
+                >
+              </li>
+              <li class="mb-1">
+                <a
+                  class="uppercase block pb-6 text-xl  text-white "
+                  href="#"
+                  >Support</a
+                >
+              </li>
+            </ul>
+          </div>
+          
+        </nav>
+      </div>
     </div>
+
     <div class="lg:px-44 lg:pt-44 px-6 pt-32">
       <div
         class="lg:bg-[url(./images/desktop/image-interactive.jpg)] bg-no-repeat lg:pt-40 lg:pl-[570px] px-6 flex flex-col items-center"
@@ -309,4 +388,46 @@
       >. Coded by <a href="#">Your Name Here</a>.
     </div> -->
   </body>
+  <script>
+    // Burger menus
+    document.addEventListener("DOMContentLoaded", function () {
+      // open
+      const burger = document.querySelectorAll(".navbar-burger");
+      const menu = document.querySelectorAll(".navbar-menu");
+
+      if (burger.length && menu.length) {
+        for (var i = 0; i < burger.length; i++) {
+          burger[i].addEventListener("click", function () {
+            for (var j = 0; j < menu.length; j++) {
+              menu[j].classList.toggle("hidden");
+            }
+          });
+        }
+      }
+
+      // close
+      const close = document.querySelectorAll(".navbar-close");
+      const backdrop = document.querySelectorAll(".navbar-backdrop");
+
+      if (close.length) {
+        for (var i = 0; i < close.length; i++) {
+          close[i].addEventListener("click", function () {
+            for (var j = 0; j < menu.length; j++) {
+              menu[j].classList.toggle("hidden");
+            }
+          });
+        }
+      }
+
+      if (backdrop.length) {
+        for (var i = 0; i < backdrop.length; i++) {
+          backdrop[i].addEventListener("click", function () {
+            for (var j = 0; j < menu.length; j++) {
+              menu[j].classList.toggle("hidden");
+            }
+          });
+        }
+      }
+    });
+  </script>
 </html>
