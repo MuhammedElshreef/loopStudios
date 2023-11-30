@@ -5,22 +5,24 @@ module.exports = {
     container: {
       center: true,
       padding: {
-        DEFAULT: "3.5rem"
+        DEFAULT: "3.5rem",
       },
       screens: {
         sm: "640px",
         md: "768px",
         lg: "1024px",
         xl: "1280px",
-      }
+      },
     },
     extend: {
       fontFamily: {
-        'alata': ['Alata', 'sans-serif'],
-        'josefin' : ['Josefin Sans', 'sans-serif']
-      }
+        alata: ["Alata", "sans-serif"],
+        josefin: ["Josefin Sans", "sans-serif"],
+      },
     },
-  }, 
-  plugins: [],
-}
-
+  },
+  daisyui: {
+    themes: [],
+  },
+  plugins: [require("daisyui")],
+};

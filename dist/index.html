@@ -19,6 +19,7 @@
     />
     <link rel="stylesheet" href="all.min.css" />
     <link rel="stylesheet" href="output.css" />
+    <script defer src="./app.js"></script>
     <title>Frontend Mentor | Loopstudios landing page</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -36,35 +37,73 @@
     <div
       class="lg:bg-[url(./images/desktop/image-hero.jpg)] bg-[url(./images/mobile/image-hero.jpg)] bg-no-repeat bg-cover lg:min-h-screen w-auto h-auto flex flex-col"
     >
-      <div class="px-6 lg:px-44 pt-10 lg:pt-12 flex justify-between">
-        <img src="./images/logo.svg" class="lg:w-auto w-1/2 object-contain" />
-        <nav
-        class="relative px-4 py-4 flex justify-between items-center bg-transparent"
+      <div
+        class="px-6 lg:px-44 pt-10 lg:pt-12 flex justify-between absolute w-full z-50"
       >
-        <div class="lg:hidden">
-          <button class="navbar-burger flex items-center text-white ">
-            <svg
-              class="block h-4 w-4 fill-current"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
+        <img src="./images/logo.svg" class="lg:w-auto w-1/2 object-contain" />
+
+        <div>
+          <div class="lg:flex lg:flex-row lg:gap-9 hidden">
+            <button
+              class="text-white text-lg hover:underline hover:text-violet-400 transition-all duration-300"
             >
-              <title>Mobile menu</title>
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-            </svg>
-          </button>
+              About
+            </button>
+            <button
+              class="text-white text-lg hover:underline hover:text-violet-400 transition-all duration-300"
+            >
+              Careers
+            </button>
+            <button
+              class="text-white text-lg hover:underline hover:text-violet-400 transition-all duration-300"
+            >
+              Events
+            </button>
+            <button
+              class="text-white text-lg hover:underline hover:text-violet-400 transition-all duration-300"
+            >
+              Products
+            </button>
+            <button
+              class="text-white text-lg hover:underline hover:text-violet-400 transition-all duration-300"
+            >
+              Support
+            </button>
+          </div>
         </div>
-        <ul
-          class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6"
-        >
-          
-        
-      </nav>
-        <div class="lg:flex lg:flex-row lg:gap-9 hidden">
-          <button class="text-white text-base hover:underline">About</button>
-          <button class="text-white text-base hover:underline">Careers</button>
-          <button class="text-white text-base hover:underline">Events</button>
-          <button class="text-white text-base hover:underline">Products</button>
-          <button class="text-white text-base hover:underline">Support</button>
+        <div class="lg:hidden">
+          <label
+            class="swap swap-rotate border-none text-[#9698A6] bg-transparent"
+          >
+            <!-- this hidden checkbox controls the state -->
+            <input type="checkbox" id="burger-menu-btn" />
+
+            <!-- hamburger icon -->
+            <svg
+              class="swap-off fill-current"
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 512 512"
+            >
+              <path
+                d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
+              />
+            </svg>
+
+            <!-- close icon -->
+            <svg
+              class="swap-on fill-current"
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 512 512"
+            >
+              <polygon
+                points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"
+              />
+            </svg>
+          </label>
         </div>
       </div>
       <div class="px-6 lg:px-44 font-josefin py-36">
@@ -77,71 +116,39 @@
         </div>
       </div>
 
-      <div class="navbar-menu relative z-50 hidden">
-        <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
-        <nav
-          class="fixed top-0 left-0 bottom-0 flex flex-col w-full max-w-sm pt-12 px-6 bg-black border-r overflow-y-auto"
-        >
-          <div class="flex items-center justify-between mb-8 pb-16">
-            <img src="./images/logo.svg" class="lg:w-auto w-1/2 object-contain" />
-            <button class="navbar-close pr-3">
-              <svg
-                class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+      <div
+        class="fixed top-0 left-0 bottom-0 px-6 flex flex-col  justify-center w-full hidden bg-black z-40"
+        id="burger-menu"
+      >
+        <div class="">
+          <ul class="font-josefin gap-16">
+            <li class="mb-1">
+              <a class="uppercase block pb-6 text-xl text-white" href="#"
+                >About</a
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M6 18L18 6M6 6l12 12"
-                ></path>
-              </svg>
-            </button>
-          </div>
-          <div>
-            <ul class="font-josefin gap-16">
-              <li class="mb-1">
-                <a
-                class="uppercase block pb-6 text-xl  text-white "
-                href="#"
-                  >About</a
-                >
-              </li>
-              <li class="mb-1">
-                <a
-                  class="uppercase block pb-6 text--xl text-white "
-                  href="#"
-                  >Careers</a
-                >
-              </li>
-              <li class="mb-1">
-                <a
-                  class="uppercase block pb-6 text-xl  text-white "
-                  href="#"
-                  >Events</a
-                >
-              </li>
-              <li class="mb-1">
-                <a
-                  class="uppercase block pb-6 text-xl  text-white "
-                  href="#"
-                  >Products</a
-                >
-              </li>
-              <li class="mb-1">
-                <a
-                  class="uppercase block pb-6 text-xl  text-white "
-                  href="#"
-                  >Support</a
-                >
-              </li>
-            </ul>
-          </div>
-          
-        </nav>
+            </li>
+            <li class="mb-1">
+              <a class="uppercase block pb-6 text-xl text-white" href="#"
+                >Careers</a
+              >
+            </li>
+            <li class="mb-1">
+              <a class="uppercase block pb-6 text-xl text-white" href="#"
+                >Events</a
+              >
+            </li>
+            <li class="mb-1">
+              <a class="uppercase block pb-6 text-xl text-white" href="#"
+                >Products</a
+              >
+            </li>
+            <li class="mb-1">
+              <a class="uppercase block pb-6 text-xl text-white" href="#"
+                >Support</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -177,7 +184,7 @@
           Our creations
         </p>
         <button
-          class="hover:bg-black border-black hover:text-white border-solid border-[2px] lg:h-10 lg:w-48 py-1 uppercase font-alata text-lg tracking-[0.3em] lg:block hidden"
+          class="hover:bg-black border-black hover:text-white border-solid border-[2px] lg:h-10 lg:w-48 py-1 uppercase font-alata text-lg tracking-[0.3em] lg:block hidden transition-colors duration-300"
         >
           See all
         </button>
@@ -186,157 +193,138 @@
         class="lg:px-44 lg:pt-44 pt-14 grid lg:grid-cols-4 gap-8 lg:pb-48 justify-center px-6"
         style="row-gap: 44px"
       >
-        <!-- <div class="relative lg:h-full h-32 group">
+        <div class="relative group hover:cursor-pointer">
           <img
-            class="group-hover:opacity-30 w-full h-full object-cover object-center"
+            class="group-hover:opacity-30 lg:block hidden transition-all duration-300"
             src="./images/desktop/image-deep-earth.jpg"
             alt=""
           />
           <img
-          class="group-hover:opacity-30 lg:hidden block"
-          src="./images/mobile/image-deep-earth.jpg"
-          alt=""
-        /> 
-          <div class="absolute bottom-6 px-4 left-0 w-full">
-            <p
-              class="inline p-1 bg-black/50 uppercase group-hover:text-black text-white font-josefin text-2xl/normal"
-            >
-              Deep earth
-            </p>
-          </div>
-        </div> -->
-        <div class="relative group">
-          <img
-            class="group-hover:opacity-30 lg:block hidden"
-            src="./images/desktop/image-deep-earth.jpg"
-            alt=""
-          />
-          <img
-            class="group-hover:opacity-30 lg:hidden block"
+            class="group-hover:opacity-30 lg:hidden block transition-all duration-300"
             src="./images/mobile/image-deep-earth.jpg"
             alt=""
           />
           <p
-            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2xl md:text-2xl text-2xl bottom-[6%] lg:w-1/2 lg:h-auto w-1/3"
+            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2xl md:text-2xl text-2xl bottom-[6%] lg:w-1/2 lg:h-auto w-1/3 transition-all duration-300"
           >
             Deep earth
           </p>
         </div>
-        <div class="relative group">
+        <div class="relative group cursor-pointer">
           <img
-            class="group-hover:opacity-30 lg:block hidden"
+            class="group-hover:opacity-30 lg:block hidden transition-all duration-300"
             src="./images/desktop/image-night-arcade.jpg"
             alt=""
           />
           <img
-            class="group-hover:opacity-30 lg:hidden block"
+            class="group-hover:opacity-30 lg:hidden block transition-all duration-300"
             src="./images/mobile/image-night-arcade.jpg"
             alt=""
           />
           <p
-            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2xl md:text-2xl text-2xl bottom-[6%] lg:w-1/2 lg:h-auto w-1/3"
+            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2xl md:text-2xl text-2xl bottom-[6%] lg:w-1/2 lg:h-auto w-1/3 transition-all duration-300"
           >
             Night arcade
           </p>
         </div>
-        <div class="relative group">
+        <div class="relative group cursor-pointer">
           <img
-            class="group-hover:opacity-30 lg:block hidden"
+            class="group-hover:opacity-30 lg:block hidden transition-all duration-300"
             src="./images/desktop/image-soccer-team.jpg"
             alt=""
           />
           <img
-            class="group-hover:opacity-30 lg:hidden block"
+            class="group-hover:opacity-30 lg:hidden block transition-all duration-300"
             src="./images/mobile/image-soccer-team.jpg"
             alt=""
           />
           <p
-            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2xl md:text-2xl text-2xl bottom-[6%] lg:w-1/2 lg:h-auto w-1/3"
+            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2xl md:text-2xl text-2xl bottom-[6%] lg:w-1/2 lg:h-auto w-1/3 transition-all duration-300"
           >
             Soccer team VR
           </p>
         </div>
-        <div class="relative group">
+        <div class="relative group cursor-pointer">
           <img
-            class="group-hover:opacity-30 lg:block hidden"
+            class="group-hover:opacity-30 lg:block hidden transition-all duration-300"
             src="./images/desktop/image-grid.jpg"
             alt=""
           />
           <img
-            class="group-hover:opacity-30 lg:hidden block"
+            class="group-hover:opacity-30 lg:hidden block transition-all duration-300"
             src="./images/mobile/image-grid.jpg"
             alt=""
           />
           <p
-            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2xl md:text-2xl text-2xl bottom-[6%] lg:w-1/2 lg:h-auto w-1/3"
+            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2xl md:text-2xl text-2xl bottom-[6%] lg:w-1/2 lg:h-auto w-1/3 transition-all duration-300"
           >
             The <br />grid
           </p>
         </div>
-        <div class="relative group">
+        <div class="relative group cursor-pointer">
           <img
-            class="group-hover:opacity-30 lg:block hidden"
+            class="group-hover:opacity-30 lg:block hidden transition-all duration-300"
             src="./images/desktop/image-from-above.jpg"
             alt=""
           />
           <img
-            class="group-hover:opacity-30 lg:hidden block"
+            class="group-hover:opacity-30 lg:hidden block transition-all duration-300"
             src="./images/mobile/image-from-above.jpg"
             alt=""
           />
           <p
-            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2xl md:text-2xl text-2xl bottom-[6%] w-1/2 lg:h-auto"
+            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2xl md:text-2xl text-2xl bottom-[6%] w-1/2 lg:h-auto transition-all duration-300"
           >
             From up above VR
           </p>
         </div>
-        <div class="relative group">
+        <div class="relative group cursor-pointer">
           <img
-            class="group-hover:opacity-30 lg:block hidden"
+            class="group-hover:opacity-30 lg:block hidden transition-all duration-300"
             src="./images/desktop/image-pocket-borealis.jpg"
             alt=""
           />
           <img
-            class="group-hover:opacity-30 lg:hidden block"
+            class="group-hover:opacity-30 lg:hidden block transition-all duration-300"
             src="./images/mobile/image-pocket-borealis.jpg"
             alt=""
           />
           <p
-            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2xl md:text-2xl text-2xl bottom-[6%] lg:w-1/2 lg:h-auto w-1/3"
+            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2xl md:text-2xl text-2xl bottom-[6%] lg:w-1/2 lg:h-auto w-1/3 transition-all duration-300"
           >
             Pocket borealis
           </p>
         </div>
-        <div class="relative group">
+        <div class="relative group cursor-pointer">
           <img
-            class="group-hover:opacity-30 lg:block hidden"
+            class="group-hover:opacity-30 lg:block hidden transition-all duration-300"
             src="./images/desktop/image-curiosity.jpg"
             alt=""
           />
           <img
-            class="group-hover:opacity-30 lg:hidden block"
+            class="group-hover:opacity-30 lg:hidden block transition-all duration-300"
             src="./images/mobile/image-curiosity.jpg"
             alt=""
           />
           <p
-            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2 xl md:text-2xl text-2xl bottom-[6%] lg:w-1/2 lg:h-auto w-1/3"
+            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2 xl md:text-2xl text-2xl bottom-[6%] lg:w-1/2 lg:h-auto w-1/3 transition-all duration-300"
           >
             The curiosity
           </p>
         </div>
-        <div class="relative group">
+        <div class="relative group cursor-pointer">
           <img
-            class="group-hover:opacity-30 lg:block hidden"
+            class="group-hover:opacity-30 lg:block hidden transition-all duration-300"
             src="./images/desktop/image-fisheye.jpg"
             alt=""
           />
           <img
-            class="group-hover:opacity-30 lg:hidden block"
+            class="group-hover:opacity-30 lg:hidden block transition-all duration-300"
             src="./images/mobile/image-fisheye.jpg"
             alt=""
           />
           <p
-            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2xl md:text-2xl text-2xl bottom-[6%] lg:w-1/2 lg:h-auto w-1/3"
+            class="absolute uppercase group-hover:text-black text-white lg:left-[13%] left-[10%] font-josefin lg:text-2xl md:text-2xl text-2xl bottom-[6%] lg:w-1/2 lg:h-auto w-1/3 transition-all duration-300"
           >
             Make it fisheye
           </p>
@@ -344,14 +332,14 @@
       </div>
       <div class="lg:hidden pt-10 pb-20 flex justify-center">
         <button
-          class="hover:bg-black border-black hover:text-white border-solid tracking-[0.25em] border-[2px] py-3 px-9 uppercase font-alata text-lg"
+          class="hover:bg-black border-black hover:text-white border-solid tracking-[0.25em] border-[2px] py-3 px-9 uppercase font-alata text-lg transition-colors"
         >
           SEE ALL
         </button>
       </div>
     </div>
     <div
-      class="bg-black lg:px-44 py-14 flex lg:flex-row flex-col lg:justify-between px-6"
+      class="bg-black lg:px-44 py-14 flex lg:flex-row flex-col gap-8 lg:gap-0 lg:justify-between px-6"
     >
       <div class="flex flex-col justify-center items-center">
         <img
@@ -359,22 +347,59 @@
           src="./images/logo.svg"
           alt=""
         />
-        <div class="flex lg:flex-row flex-col pt-6 lg:gap-8 gap-4">
-          <button class="text-white">About</button>
-          <button class="text-white">Careers</button>
-          <button class="text-white">Events</button>
-          <button class="text-white">Products</button>
-          <button class="text-white">Support</button>
+        <div class="flex lg:flex-row flex-col items-center pt-6 lg:gap-8 gap-4">
+          <a href="#" class="text-white hover:text-violet-400 transition-all"
+            >About</a
+          >
+          <a href="#" class="text-white hover:text-violet-400 transition-all"
+            >Careers</a
+          >
+          <a href="#" class="text-white hover:text-violet-400 transition-all"
+            >Events</a
+          >
+          <a href="#" class="text-white hover:text-violet-400 transition-all"
+            >Products</a
+          >
+          <a href="#" class="text-white hover:text-violet-400 transition-all"
+            >Support</a
+          >
         </div>
       </div>
       <div class="flex flex-col gap-0">
-        <div
-          class="flex lg:justify-end justify-center gap-6 lg:py-[23px] pt-12"
-        >
-          <a class="fa-brands fa-facebook fa-xl text-white h-fit"> </a>
-          <a class="fa-brands fa-twitter fa-xl text-white h-fit"> </a>
-          <a class="fa-brands fa-pinterest fa-xl text-white h-fit"> </a>
-          <a class="fa-brands fa-instagram fa-xl text-white h-fit"></a>
+        <div class="flex items-center justify-center gap-4">
+          <a href="#" class="group">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+              <path
+                class="group-hover:fill-violet-400 fill-white transition-colors cursor-pointer"
+                d="M18.896 0H1.104C.494 0 0 .494 0 1.104v17.793C0 19.506.494 20 1.104 20h9.58v-7.745H8.076V9.237h2.606V7.01c0-2.583 1.578-3.99 3.883-3.99 1.104 0 2.052.082 2.329.119v2.7h-1.598c-1.254 0-1.496.597-1.496 1.47v1.928h2.989l-.39 3.018h-2.6V20h5.098c.608 0 1.102-.494 1.102-1.104V1.104C20 .494 19.506 0 18.896 0z"
+              />
+            </svg>
+          </a>
+
+          <a href="#" class="group">
+            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="18">
+              <path
+                class="group-hover:fill-violet-400 fill-white transition-colors cursor-pointer"
+                d="M20.667 2.797a8.192 8.192 0 01-2.357.646 4.11 4.11 0 001.804-2.27 8.22 8.22 0 01-2.606.996A4.096 4.096 0 0014.513.873c-2.649 0-4.595 2.472-3.997 5.038a11.648 11.648 0 01-8.457-4.287 4.109 4.109 0 001.27 5.478A4.086 4.086 0 011.47 6.59c-.045 1.901 1.317 3.68 3.29 4.075a4.113 4.113 0 01-1.853.07 4.106 4.106 0 003.834 2.85 8.25 8.25 0 01-6.075 1.7 11.616 11.616 0 006.29 1.843c7.618 0 11.922-6.434 11.662-12.205a8.354 8.354 0 002.048-2.124z"
+              />
+            </svg>
+          </a>
+          <a href="#" class="group">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+              <path
+                class="group-hover:fill-violet-400 fill-white transition-colors cursor-pointer"
+                d="M10 0C4.478 0 0 4.477 0 10c0 4.237 2.636 7.855 6.356 9.312-.088-.791-.167-2.005.035-2.868.182-.78 1.172-4.97 1.172-4.97s-.299-.6-.299-1.486c0-1.39.806-2.428 1.81-2.428.852 0 1.264.64 1.264 1.408 0 .858-.545 2.14-.828 3.33-.236.995.5 1.807 1.48 1.807 1.778 0 3.144-1.874 3.144-4.58 0-2.393-1.72-4.068-4.177-4.068-2.845 0-4.515 2.135-4.515 4.34 0 .859.331 1.781.745 2.281a.3.3 0 01.069.288l-.278 1.133c-.044.183-.145.223-.335.134-1.249-.581-2.03-2.407-2.03-3.874 0-3.154 2.292-6.052 6.608-6.052 3.469 0 6.165 2.473 6.165 5.776 0 3.447-2.173 6.22-5.19 6.22-1.013 0-1.965-.525-2.291-1.148l-.623 2.378c-.226.869-.835 1.958-1.244 2.621.937.29 1.931.446 2.962.446 5.522 0 10-4.477 10-10S15.522 0 10 0z"
+              />
+            </svg>
+          </a>
+          <a href="#" class="group">
+            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="20">
+              <path
+                class="group-hover:fill-violet-400 fill-white transition-colors cursor-pointer"
+                d="M10.333 1.802c2.67 0 2.987.01 4.042.059 2.71.123 3.976 1.409 4.1 4.099.048 1.054.057 1.37.057 4.04 0 2.672-.01 2.988-.058 4.042-.124 2.687-1.386 3.975-4.099 4.099-1.055.048-1.37.058-4.042.058-2.67 0-2.986-.01-4.04-.058-2.717-.124-3.976-1.416-4.1-4.1-.048-1.054-.058-1.37-.058-4.041 0-2.67.01-2.986.058-4.04.124-2.69 1.387-3.977 4.1-4.1 1.054-.048 1.37-.058 4.04-.058zm0-1.802C7.618 0 7.278.012 6.211.06 2.579.227.56 2.242.394 5.877.345 6.944.334 7.284.334 10s.011 3.057.06 4.123c.166 3.632 2.181 5.65 5.816 5.817 1.068.048 1.408.06 4.123.06 2.716 0 3.057-.012 4.124-.06 3.628-.167 5.651-2.182 5.816-5.817.049-1.066.06-1.407.06-4.123s-.011-3.056-.06-4.122C20.11 2.249 18.093.228 14.458.06 13.39.01 13.049 0 10.333 0zm0 4.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm0 8.468a3.333 3.333 0 110-6.666 3.333 3.333 0 010 6.666zm5.339-9.87a1.2 1.2 0 10-.001 2.4 1.2 1.2 0 000-2.4z"
+              />
+            </svg>
+          </a>
         </div>
         <p class="text-[#8C8C8C] pt-6 text-center">
           © 2021 Loopstudios. All rights reserved.
@@ -388,46 +413,4 @@
       >. Coded by <a href="#">Your Name Here</a>.
     </div> -->
   </body>
-  <script>
-    // Burger menus
-    document.addEventListener("DOMContentLoaded", function () {
-      // open
-      const burger = document.querySelectorAll(".navbar-burger");
-      const menu = document.querySelectorAll(".navbar-menu");
-
-      if (burger.length && menu.length) {
-        for (var i = 0; i < burger.length; i++) {
-          burger[i].addEventListener("click", function () {
-            for (var j = 0; j < menu.length; j++) {
-              menu[j].classList.toggle("hidden");
-            }
-          });
-        }
-      }
-
-      // close
-      const close = document.querySelectorAll(".navbar-close");
-      const backdrop = document.querySelectorAll(".navbar-backdrop");
-
-      if (close.length) {
-        for (var i = 0; i < close.length; i++) {
-          close[i].addEventListener("click", function () {
-            for (var j = 0; j < menu.length; j++) {
-              menu[j].classList.toggle("hidden");
-            }
-          });
-        }
-      }
-
-      if (backdrop.length) {
-        for (var i = 0; i < backdrop.length; i++) {
-          backdrop[i].addEventListener("click", function () {
-            for (var j = 0; j < menu.length; j++) {
-              menu[j].classList.toggle("hidden");
-            }
-          });
-        }
-      }
-    });
-  </script>
 </html>
